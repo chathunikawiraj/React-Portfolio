@@ -1,0 +1,91 @@
+// src/components/styles/Header.scss
+.header {
+  flex-shrink: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+
+  li {
+    color: #9aa8bd;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: #f0f4fa;
+      border-bottom-color: #6c8cff;
+    }
+
+    &.active {
+      color: #ffffff;
+      border-bottom-color: #6c8cff;
+    }
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  i {
+    color: #7e8a9b;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      color: #f0f4fa;
+    }
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6c8cff, #a78bfa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+}
