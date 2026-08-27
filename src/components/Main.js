@@ -1,16 +1,22 @@
 import React from 'react';
 import './styles/Main.scss';
 import profilePhoto from './assets/profilephoto.jpeg';
+
 const Main = () => {
+  const handleHireClick = () => {
+    // Option 1: Open email client
+    window.location.href = 'mailto:youremail@example.com?subject=Hiring%20Chathuni';
+    
+    // Option 2: Show a message (replace the above line with this if you prefer)
+    // alert('📩 Thank you! I will get back to you soon.');
+  };
+
   return (
     <section className="hero">
       <div className="hero-container">
-        {/* Left column: Profile Photo */}
         <div className="hero-image">
           <img src={profilePhoto} alt="Chathuni" />
         </div>
-
-        {/* Right column: Text content */}
         <div className="hero-content">
           <div className="hero-greeting">
             <i className="fas fa-hand-peace"></i> Welcome, I'm
@@ -28,25 +34,24 @@ const Main = () => {
           </p>
 
           <div className="hero-actions">
-            <button className="btn-hire">
+            <button className="btn-hire" onClick={handleHireClick}>
               <i className="fas fa-paper-plane"></i> Hire Me
             </button>
 
-            {/* Social Media Links */}
             <div className="social-links">
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://instagram.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="mailto:youremail@example.com">
+              <a href="mailto:chathuni@example.com">
                 <i className="fas fa-envelope"></i>
               </a>
             </div>
