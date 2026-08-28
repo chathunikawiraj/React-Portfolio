@@ -1,0 +1,151 @@
+// src/pages/BlogDetail.scss
+.blog-detail-page {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.blog-detail-content {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+
+  .back-link {
+    display: inline-block;
+    color: #6c8cff;
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 24px;
+    transition: 0.2s;
+
+    &:hover {
+      color: #a78bfa;
+      transform: translateX(-4px);
+    }
+  }
+
+  .blog-header {
+    margin-bottom: 30px;
+
+    .blog-category {
+      display: inline-block;
+      background: rgba(108, 140, 255, 0.15);
+      color: #6c8cff;
+      font-size: 13px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 42px;
+      color: #e8edf5;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .blog-date {
+      font-size: 15px;
+      color: #7e8a9b;
+    }
+  }
+
+  .blog-body {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #b0bed3;
+
+    h2 {
+      font-size: 28px;
+      color: #e8edf5;
+      margin: 30px 0 16px 0;
+    }
+
+    h3 {
+      font-size: 22px;
+      color: #e8edf5;
+      margin: 24px 0 12px 0;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul, ol {
+      margin: 16px 0 16px 24px;
+      
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    strong {
+      color: #e8edf5;
+    }
+
+    a {
+      color: #6c8cff;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    blockquote {
+      border-left: 4px solid #6c8cff;
+      padding-left: 20px;
+      margin: 20px 0;
+      color: #9aa8bd;
+      font-style: italic;
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: 'Courier New', monospace;
+    }
+  }
+
+  .loading-spinner, .error-message {
+    text-align: center;
+    padding: 60px 0;
+    color: #9aa8bd;
+    font-size: 18px;
+  }
+
+  .error-message h2 {
+    color: #e8edf5;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-detail-content {
+    .blog-header h1 {
+      font-size: 32px;
+    }
+    .blog-body {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .blog-detail-content {
+    .blog-header h1 {
+      font-size: 26px;
+    }
+    .blog-body {
+      font-size: 15px;
+      
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+}
