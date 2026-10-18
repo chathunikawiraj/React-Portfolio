@@ -19,7 +19,7 @@ const Main = () => {
         </div>
         <div className="hero-content">
           <div className="hero-greeting">
-            <i className="fas fa-hand-peace"></i> Welcome, I'm
+            <i className="fas fa-hand-peace"></i> Welcome
           </div>
           <h1>
             Hey I'm <span className="highlight">Chathuni</span>

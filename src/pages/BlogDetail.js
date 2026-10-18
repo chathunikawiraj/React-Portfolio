@@ -1,11 +1,10 @@
 // src/pages/BlogDetail.js
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './BlogDetail.scss';
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +12,7 @@ const BlogDetail = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/api/blogs/${id}`)
       .then((res) => {
-        if (!res.ok) throw new Error('Blog post not found');
+        if (!res.ok) throw new Error('Project not found');
         return res.json();
       })
       .then((data) => {
@@ -30,7 +29,7 @@ const BlogDetail = () => {
     return (
       <section className="page blog-detail-page">
         <div className="blog-detail-content">
-          <div className="loading-spinner">Loading blog post...</div>
+          <div className="loading-spinner">Loading project details...</div>
         </div>
       </section>
     );
@@ -42,7 +41,7 @@ const BlogDetail = () => {
         <div className="blog-detail-content">
           <div className="error-message">
             <h2>Oops! {error}</h2>
-            <Link to="/blogs" className="back-link">← Back to Blogs</Link>
+            <Link to="/projects" className="back-link">← Back to Projects</Link>
           </div>
         </div>
       </section>
@@ -52,7 +51,7 @@ const BlogDetail = () => {
   return (
     <section className="page blog-detail-page">
       <div className="blog-detail-content">
-        <Link to="/blogs" className="back-link">← Back to Blogs</Link>
+        <Link to="/projects" className="back-link">← Back to Projects</Link>
         
         <div className="blog-header">
           <div className="blog-category">{post.category}</div>
