@@ -16,10 +16,27 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you ${formData.name}! I'll get back to you soon.`);
-    setFormData({ name: '', email: '', message: '' });
+
+    fetch('http://localhost:5000/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert(`Thank you ${formData.name}! Your message has been sent successfully.`);
+          setFormData({ name: '', email: '', message: '' }); // Clear the form
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        alert('Oops! Something went wrong. Please try again later.');
+      });
   };
 
   return (

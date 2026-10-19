@@ -6,7 +6,11 @@ const path = require('path');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 // The secret password to edit/add projects
@@ -70,6 +74,34 @@ app.post('/api/blogs', (req, res) => {
   saveProjects(projects);
   
   res.json({ success: true, project: newProject });
+});
+
+// --- CONTACT FORM ROUTE ---
+app.post('/api/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  
+  const newMessage = {
+    id: Date.now(),
+    name,
+    email,
+    message,
+    date: new Date().toLocaleString()
+  };
+
+  const messagesFilePath = path.join(__dirname, 'messages.json');
+  
+  // Read existing messages or start a new array
+  let messages = [];
+  if (fs.existsSync(messagesFilePath)) {
+    const fileData = fs.readFileSync(messagesFilePath, 'utf8');
+    messages = JSON.parse(fileData);
+  }
+
+  // Add new message and save to file
+  messages.push(newMessage);
+  fs.writeFileSync(messagesFilePath, JSON.stringify(messages, null, 2));
+
+  res.json({ success: true, message: 'Message received!' });
 });
 
 app.listen(PORT, () => {
