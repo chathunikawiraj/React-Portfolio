@@ -1,11 +1,14 @@
 // src/pages/Home.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.scss';
 import profilePhoto from '../components/assets/profilephoto.jpeg';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const handleHireClick = () => {
-    window.location.href = 'mailto:chathuni@example.com?subject=Hiring%20Chathuni';
+    navigate('/contact'); 
   };
 
   return (
@@ -31,24 +34,35 @@ const Home = () => {
           </p>
 
           <div className="hero-actions">
+            {/* Primary Button: Hire Me */}
             <button className="btn-hire" onClick={handleHireClick}>
               <i className="fas fa-paper-plane"></i> Hire Me
             </button>
+
+            {/* Secondary Button: Download CV */}
+            {/* The href points to your public folder. The 'download' attribute forces the download */}
+            <a 
+              href="/Chathuni_CV.pdf" 
+              download="Chathuni_CV.pdf" 
+              className="btn-cv"
+            >
+              <i className="fas fa-download"></i> Download CV
+            </a>
 
             <div className="social-links">
               <a href="https://github.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com/in/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/chathuni-lakkhana" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://twitter.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>
+              <a href="https://x.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-x-twitter"></i>
               </a>
               <a href="https://instagram.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="mailto:chathuni@example.com">
+              <a href="mailto:chathuniikawiraj@gmail.com">
                 <i className="fas fa-envelope"></i>
               </a>
             </div>
