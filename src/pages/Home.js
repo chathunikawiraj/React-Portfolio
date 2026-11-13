@@ -42,8 +42,8 @@ const Home = () => {
             {/* Secondary Button: Download CV */}
             {/* The href points to your public folder. The 'download' attribute forces the download */}
             <a 
-              href="/Chathuni_Kawiraj_CV.pdf" 
-              download="Chathuni_Kawiraj_CV.pdf" 
+              href="/Chathuni_CV.pdf" 
+              download="Chathuni_CV.pdf" 
               className="btn-cv"
             >
               <i className="fas fa-download"></i> Download CV
