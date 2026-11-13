@@ -10,7 +10,7 @@ const BlogDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/blogs/${id}`)
+    fetch(`/api/blogs/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('Project not found');
         return res.json();

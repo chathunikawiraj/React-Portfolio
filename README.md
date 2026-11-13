@@ -1,5 +1,29 @@
 # Getting Started with Create React App
 
+## Deploying the full app on Railway
+
+The Railway service builds the React frontend and runs it with the Express API.
+The API and frontend share one public domain.
+
+1. Create a Railway project from this GitHub repository.
+2. Set the service build command to `npm run build` and the start command to
+   `npm start`.
+3. Set `ADMIN_PASSWORD` in the service's environment variables to a strong,
+   unique password. Do not put it in source code.
+4. Attach a persistent volume mounted at `/app/data` and set `DATA_DIR` to
+   `/app/data`. This keeps added projects and contact messages across
+   redeployments. The initial project list is copied into the volume on first
+   use; contact messages start empty.
+5. Generate a public domain for the service in Railway's networking settings.
+
+For local development, `npm run dev` starts the React development server and
+the API; the development proxy forwards `/api` requests to port 5000. To run
+the built app locally, run `npm run build` followed by `npm start`.
+
+The JSON files are suitable for a small portfolio deployment. If the service
+is scaled to multiple instances or needs stronger data durability, move this
+data to a managed database.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -8,7 +32,11 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Starts the Express service, which serves the API and production frontend.
+
+### `npm run dev`
+
+Starts the React development server and API together.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\

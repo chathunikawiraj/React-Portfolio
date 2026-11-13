@@ -1,12 +1,29 @@
 // src/AdminContext.js
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const AdminContext = createContext();
 
 export const AdminProvider = ({ children }) => {
-  const [isAdmin, setIsAdmin] = useState(
-    localStorage.getItem('adminToken') === 'secret-admin-token-123'
-  );
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('adminToken');
+    if (!token) return;
+
+    fetch('/api/session', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then((response) => {
+        if (response.ok) {
+          setIsAdmin(true);
+        } else if (response.status === 401) {
+          localStorage.removeItem('adminToken');
+        } else {
+          throw new Error('Unable to verify admin session');
+        }
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   const login = (token) => {
     localStorage.setItem('adminToken', token);

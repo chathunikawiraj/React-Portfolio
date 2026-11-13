@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors({
   origin: '*',
@@ -13,19 +14,31 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// The secret password to edit/add projects
-const ADMIN_PASSWORD = "chathuni123"; 
-const dataFilePath = path.join(__dirname, 'projects.json');
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const adminTokens = new Set();
+const dataDirectory = process.env.DATA_DIR || __dirname;
+const projectsFilePath = path.join(dataDirectory, 'projects.json');
+const messagesFilePath = path.join(dataDirectory, 'messages.json');
+const buildDirectory = path.join(__dirname, '..', 'build');
+
+if (process.env.NODE_ENV === 'production' && !ADMIN_PASSWORD) {
+  throw new Error('ADMIN_PASSWORD must be set in production');
+}
+
+fs.mkdirSync(dataDirectory, { recursive: true });
 
 // Helper function to read projects
 const getProjects = () => {
-  const data = fs.readFileSync(dataFilePath, 'utf8');
+  if (!fs.existsSync(projectsFilePath)) {
+    fs.copyFileSync(path.join(__dirname, 'projects.json'), projectsFilePath);
+  }
+  const data = fs.readFileSync(projectsFilePath, 'utf8');
   return JSON.parse(data);
 };
 
 // Helper function to save projects
 const saveProjects = (projects) => {
-  fs.writeFileSync(dataFilePath, JSON.stringify(projects, null, 2));
+  fs.writeFileSync(projectsFilePath, JSON.stringify(projects, null, 2));
 };
 
 // --- PUBLIC ROUTES ---
@@ -45,18 +58,28 @@ app.get('/api/blogs/:id', (req, res) => {
 // Admin Login check
 app.post('/api/login', (req, res) => {
   const { password } = req.body;
-  if (password === ADMIN_PASSWORD) {
-    res.json({ success: true, token: "secret-admin-token-123" });
+  if (ADMIN_PASSWORD && password === ADMIN_PASSWORD) {
+    const token = crypto.randomBytes(32).toString('hex');
+    adminTokens.add(token);
+    res.json({ success: true, token });
   } else {
     res.status(401).json({ success: false, error: "Incorrect password" });
   }
+});
+
+app.get('/api/session', (req, res) => {
+  const token = req.get('Authorization')?.replace(/^Bearer /, '');
+  if (typeof token === 'string' && adminTokens.has(token)) {
+    return res.sendStatus(204);
+  }
+  return res.sendStatus(401);
 });
 
 // Add a new project (Only Admin)
 app.post('/api/blogs', (req, res) => {
   const { title, category, date, excerpt, fullContent, token } = req.body;
   
-  if (token !== "secret-admin-token-123") {
+  if (typeof token !== 'string' || !adminTokens.has(token)) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
 
@@ -88,8 +111,6 @@ app.post('/api/contact', (req, res) => {
     date: new Date().toLocaleString()
   };
 
-  const messagesFilePath = path.join(__dirname, 'messages.json');
-  
   // Read existing messages or start a new array
   let messages = [];
   if (fs.existsSync(messagesFilePath)) {
@@ -104,6 +125,14 @@ app.post('/api/contact', (req, res) => {
   res.json({ success: true, message: 'Message received!' });
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+app.use(express.static(buildDirectory));
+app.get(/.*/, (req, res, next) => {
+  if (req.path.startsWith('/api/') || !fs.existsSync(path.join(buildDirectory, 'index.html'))) {
+    return next();
+  }
+  return res.sendFile(path.join(buildDirectory, 'index.html'));
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });

@@ -19,7 +19,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:5000/api/contact', {
+    fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

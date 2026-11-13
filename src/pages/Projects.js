@@ -18,7 +18,7 @@ const Projects = () => {
   }, []);
 
   const fetchProjects = () => {
-    fetch('http://localhost:5000/api/blogs')
+    fetch('/api/blogs')
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(err => console.error(err));
@@ -28,7 +28,7 @@ const Projects = () => {
     e.preventDefault();
     const token = localStorage.getItem('adminToken');
     
-    fetch('http://localhost:5000/api/blogs', {
+    fetch('/api/blogs', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...formData, token })
