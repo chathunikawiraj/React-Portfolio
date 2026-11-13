@@ -59,7 +59,7 @@ const Home = () => {
               <a href="https://x.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-x-twitter"></i>
               </a>
-              <a href="https://instagram.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/cha_th_u_ni?mdxt=MWsyNzh3eDF6M2RkNQ==" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
               <a href="mailto:chathuniikawiraj@gmail.com">

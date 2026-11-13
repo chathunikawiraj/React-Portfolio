@@ -51,7 +51,7 @@ const Contact = () => {
               <i className="fas fa-envelope"></i>
               <div>
                 <h4>Email</h4>
-                <p>chathuni@example.com</p>
+                <p>chathuniikawiraj@gmail.com</p>
               </div>
             </div>
             <div className="info-item">
@@ -65,20 +65,20 @@ const Contact = () => {
               <i className="fas fa-phone"></i>
               <div>
                 <h4>Phone</h4>
-                <p>+94 77 123 4567</p>
+                <p>+94 77 957 11 21</p>
               </div>
             </div>
             <div className="contact-social">
               <a href="https://github.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com/in/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/chathuni-lakkhana" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://twitter.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>
+              <a href="https://x.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-x-twitter"></i>
               </a>
-              <a href="https://instagram.com/chathunikawiraj" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/cha_th_u_ni?mdxt=MWsyNzh3eDF6M2RkNQ==" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>

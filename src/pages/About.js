@@ -37,13 +37,13 @@ const About = () => {
             <div className="stat-card">
               <i className="fas fa-graduation-cap"></i>
               <h3>University of Moratuwa</h3>
-              <p>BSc in Information Technology (2024 - 2028)</p>
+              <p>BSc Hons in Information Technology and Management (2025 - 2029)</p>
             </div>
             <div className="stat-card">
               <i className="fas fa-trophy"></i>
               <h3>Achievements</h3>
-              <p>Winner - Hackathon 2025</p>
-              <p>Dean's List - Semester 2</p>
+              <p>MoraXtreme 10.0 – Algorithmic Coding Competition</p>
+              <p>Overall GPA: 3.73</p>
             </div>
           </div>
         </div>
