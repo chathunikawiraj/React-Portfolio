@@ -8,11 +8,11 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleHireClick = () => {
-    navigate('/contact'); 
+    navigate('/#contact');
   };
 
   return (
-    <section className="page home-page">
+    <section className="page home-page" id="home">
       <div className="hero-container">
         <div className="hero-image">
           <img src={profilePhoto} alt="Chathuni" />

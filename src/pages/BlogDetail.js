@@ -41,7 +41,7 @@ const BlogDetail = () => {
         <div className="blog-detail-content">
           <div className="error-message">
             <h2>Oops! {error}</h2>
-            <Link to="/projects" className="back-link">← Back to Projects</Link>
+            <Link to="/#projects" className="back-link">← Back to Projects</Link>
           </div>
         </div>
       </section>
@@ -51,7 +51,7 @@ const BlogDetail = () => {
   return (
     <section className="page blog-detail-page">
       <div className="blog-detail-content">
-        <Link to="/projects" className="back-link">← Back to Projects</Link>
+        <Link to="/#projects" className="back-link">← Back to Projects</Link>
         
         <div className="blog-header">
           <div className="blog-category">{post.category}</div>

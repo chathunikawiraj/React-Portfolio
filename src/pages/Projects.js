@@ -44,7 +44,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="page blogs-page">
+    <section className="page blogs-page" id="projects">
       <div className="blogs-content">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h1>My <span className="highlight">Projects</span></h1>

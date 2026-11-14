@@ -1,6 +1,10 @@
 // src/components/styles/Header.scss
 .header {
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #14181f;
 }
 
 .navbar {

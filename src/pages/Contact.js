@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="page contact-page">
+    <section className="page contact-page" id="contact">
       <div className="contact-content">
         <h1>Get In <span className="highlight">Touch</span></h1>
         <p className="contact-subtitle">Have a project? Let's talk about it.</p>
