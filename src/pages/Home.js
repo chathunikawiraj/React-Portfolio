@@ -26,11 +26,10 @@ const Home = () => {
           </h1>
           <p className="hero-description">
             I'm an undergraduate student at the University of Moratuwa,
-            Faculty of Information Technology, with a passion for technology,
-            problem-solving, and continuous learning. I'm currently building
-            my skills in areas such as web development, multi-media technologies,
-            and business management. I enjoy taking on new challenges and
-            working on real-world projects that make a difference.
+            focused on building practical, scalable software solutions. I work across
+            full-stack web development, IoT, AI-powered applications, databases,
+            and UI/UX design. I enjoy analyzing real-world problems and turning
+            them into meaningful products through continuous learning.
           </p>
 
           <div className="hero-actions">

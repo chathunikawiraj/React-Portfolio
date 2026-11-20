@@ -15,20 +15,38 @@ const About = () => {
               I thrive on solving complex problems and creating meaningful digital experiences.
             </p>
             <p>
-              My journey in tech started with web development, and I've since expanded 
-              into multi-media technologies, UI/UX design, and business management. 
-              I believe in continuous learning—every day is an opportunity to grow.
+              My journey in tech started with web development, and I've since expanded
+              into full-stack engineering, IoT, AI-powered applications, and UI/UX design.
+              I enjoy analyzing user needs and turning them into practical, scalable
+              software solutions through continuous learning.
             </p>
             <div className="skills">
               <h3>Technical Skills</h3>
               <div className="skill-tags">
+                <span>C</span>
+                <span>Java</span>
+                <span>PHP</span>
                 <span>React.js</span>
+                <span>Next.js</span>
+                <span>TypeScript</span>
                 <span>JavaScript</span>
+                <span>Python</span>
                 <span>HTML & CSS</span>
                 <span>SCSS</span>
+                <span>Spring Boot</span>
+                <span>REST APIs</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>MongoDB</span>
+                <span>Firebase</span>
+                <span>Prisma ORM</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
                 <span>Figma</span>
                 <span>Git & GitHub</span>
-                <span>Node.js (basic)</span>
+                <span>Postman</span>
                 <span>UI/UX Design</span>
               </div>
             </div>
@@ -43,7 +61,7 @@ const About = () => {
               <i className="fas fa-trophy"></i>
               <h3>Achievements</h3>
               <p>MoraXtreme 10.0 – Algorithmic Coding Competition</p>
-              <p>Overall GPA: 3.73</p>
+              <p>Current SGPA: 3.75</p>
             </div>
           </div>
         </div>

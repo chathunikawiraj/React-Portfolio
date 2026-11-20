@@ -1,5 +1,37 @@
 [
   {
+    "id": 1792310700001,
+    "title": "ExpenseAI - AI-Powered Expense Management",
+    "category": "Full-Stack AI",
+    "date": "2026",
+    "excerpt": "A full-stack finance platform for expense tracking, budgets, savings goals, OCR receipt scanning, and AI-powered spending insights.",
+    "fullContent": "<p>Developed a full-stack personal finance management platform that helps users track income and expenses, manage budgets and savings goals, visualize financial insights, and export reports.</p><h3>Key Features</h3><ul><li>OCR-based receipt scanning for automated expense entry</li><li>OpenAI-powered personalized spending insights</li><li>JWT authentication and role-based access control</li><li>Monthly financial reporting and CSV data export</li></ul><h3>Tech Stack</h3><p>React, TypeScript, Node.js, Express.js, PostgreSQL, and Prisma ORM</p><p><a href=\"https://github.com/chathunikawiraj/ExpenseAI\" target=\"_blank\" rel=\"noopener noreferrer\">View on GitHub</a></p>"
+  },
+  {
+    "id": 1792310700002,
+    "title": "Taskora - AI Productivity and Study Platform",
+    "category": "Full-Stack AI",
+    "date": "2026",
+    "excerpt": "An AI-powered productivity platform combining task management, smart study planning, habit tracking, focus sessions, and analytics.",
+    "fullContent": "<p>Developed an AI-powered productivity platform that combines task management, smart study planning, habit tracking, focus sessions, and productivity analytics.</p><h3>Key Features</h3><ul><li>Task and project management</li><li>Smart study planning and habit tracking</li><li>Focus sessions and productivity analytics</li><li>Personalized planning through AI</li></ul><h3>Tech Stack</h3><p>React.js, TypeScript, Node.js, Express.js, PostgreSQL, and Prisma ORM</p>"
+  },
+  {
+    "id": 1792310700004,
+    "title": "Portfolio Website",
+    "category": "Web Development",
+    "date": "2026",
+    "excerpt": "A responsive portfolio showcasing software projects and technical expertise with modern UI/UX patterns.",
+    "fullContent": "<p>Designed and built a responsive portfolio website to showcase software projects and technical expertise.</p><h3>Key Highlights</h3><ul><li>Mobile-first responsive design</li><li>Modern UI/UX patterns</li><li>Reusable component-based layout</li><li>Performance-focused implementation</li></ul><h3>Tech Stack</h3><p>React.js, SCSS, HTML5, CSS3, and JavaScript</p><p><a href=\"https://github.com/chathunikawiraj/React-Portfolio\" target=\"_blank\" rel=\"noopener noreferrer\">View on GitHub</a></p>"
+  },
+  {
+    "id": 1792310700005,
+    "title": "Weather Monitoring and Prediction System",
+    "category": "IoT",
+    "date": "2026",
+    "excerpt": "An IoT weather dashboard with live Firebase telemetry, environmental charts, trend forecasting, and prediction indices.",
+    "fullContent": "<p>Built the responsive frontend for a first-year microcontroller-based IoT weather monitoring project.</p><h3>Key Features</h3><ul><li>Live temperature, humidity, pressure, rain, and light telemetry</li><li>Firebase synchronization every 30 seconds</li><li>Interactive, toggleable Chart.js visualizations</li><li>Secondary environmental indices and weather trend forecasting</li></ul><h3>Tech Stack</h3><p>JavaScript, Chart.js, Firebase, and IoT microcontrollers</p>"
+  },
+  {
     "id": 1792310699696,
     "title": "Full-Stack Blog Application",
     "category": " Web Development",
@@ -8,11 +40,11 @@
     "fullContent": "<p>Excited to share my latest project: a fully functional, full-stack Blog Application! 🚀</p>\n\n<p>Building this from the ground up was an incredible learning experience. I wanted to challenge myself to not just build a frontend, but to create a complete, end-to-end solution.</p>\n\n<h3>💻 Tech Stack:</h3>\n<ul>\n  <li><strong>Frontend:</strong> HTML, CSS, Vanilla JavaScript</li>\n  <li><strong>Backend:</strong> PHP (Custom REST API)</li>\n  <li><strong>Database:</strong> MySQL</li>\n</ul>\n\n<h3>🔑 Key Features:</h3>\n<ul>\n  <li>✅ Secure user authentication (Login/Register with password hashing)</li>\n  <li>✅ Full CRUD operations (Create, Read, Update, Delete blogs)</li>\n  <li>✅ Strict authorization (users can only manage their own posts)</li>\n  <li>✅ Integrated EasyMDE Markdown editor & Marked.js for dynamic rendering</li>\n  <li>✅ Custom server-side caching for faster load times</li>\n  <li>✅ Fully responsive, custom \"Fashion & Design\" UI</li>\n</ul>\n\n<p>This project taught me so much about API routing, database security, handling live server deployments, and debugging environment configurations.</p>\n\n<p>Check out the code on my GitHub here: <br>\n<a href=\"https://github.com/chathunikawiraj/Blog-Application.git\" target=\"_blank\" rel=\"noopener noreferrer\">https://github.com/chathunikawiraj/Blog-Application.git</a></p>\n\n<p>🌐 <strong>Live Demo:</strong> <br>\n<a href=\"https://fashion-design.infinityfreeapp.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://fashion-design.infinityfreeapp.com/</a></p>"
   },
   {
-    "id": 1792263182141,
-    "title": "Air Quality and Weather Prediction System",
-    "category": "IOT",
-    "date": "August, 2026",
-    "excerpt": "A secure dual-station IoT platform for real-time environmental monitoring and short-term AI-based air quality and weather prediction.",
-    "fullContent": "<p>🚀 Excited to share the successful completion of our project: <strong>Air Quality & Weather Prediction System!</strong></p>\n\n<p>To address the challenges of localized environmental monitoring and secure sensor-data transmission, our team, Sensor Squad, developed a secure dual-station platform for real-time environmental monitoring and short-term air quality and weather prediction.</p>\n\n<h3>🔹 Key Architectural Highlights</h3>\n\n<p><strong>• Dual-Station Architecture</strong><br>\nBuilt two physically separated monitoring stations: a Ground Station focused on air-quality parameters such as PM1.0, PM2.5, PM10, VOC, NOx, CO₂, and CO, and a Rooftop Station monitoring weather parameters including temperature, humidity, wind speed, wind direction, rainfall, light intensity, and atmospheric pressure.</p>\n\n<p><strong>• Embedded & Hardware Systems</strong><br>\nPowered by ESP32 microcontrollers, with custom PCB designs developed using EasyEDA, solar/battery power management, DS3231 RTC timestamping, and W25Q128 flash memory for local data buffering during network interruptions.</p>\n\n<p><strong>• End-to-End Security</strong><br>\nImplemented AES-128-GCM authenticated encryption on the ESP32 using mbedTLS to protect sensor data during transmission through GSM/GPRS using the SIM800L. A Cloudflare Worker validates and decrypts the encrypted payload before securely forwarding the data to Firebase Realtime Database via HTTPS.</p>\n\n<p><strong>• AI/ML-Based Prediction</strong><br>\nDeveloped a PyTorch-based Attention-Augmented LSTM pipeline for multi-target short-term forecasting of weather and air-quality parameters, including AQI-related predictions.</p>\n\n<p><strong>• Interactive Web Dashboard</strong><br>\nDeveloped a responsive React.js dashboard hosted on Netlify, featuring real-time telemetry, historical data visualization, interactive Chart.js analytics, prediction results, and intelligent environmental alerts.</p>\n\n<h3>🔹 My Core Contributions</h3>\n\n<ul>\n  <li>Architected and implemented the AES-128-GCM data-security mechanism on the ESP32 and developed the secure Cloudflare Worker middleware for authenticated decryption and Firebase integration.</li>\n  <li>Programmed the SIM800L GSM/GPRS module using UART and AT commands, including network configuration, HTTP communication, error handling, and reconnection mechanisms.</li>\n  <li>Integrated and tested the BMP280 atmospheric pressure sensor and MICS-5524 gas sensor with the ESP32.</li>\n  <li>Contributed to the cloud backend and database integration, ensuring reliable data transmission, storage, and synchronization with the web dashboard.</li>\n</ul>\n\n<p>🌐 <strong>Live Dashboard:</strong><br>\n<a href=\"https://lnkd.in/gxWuJ7qk\" target=\"_blank\" rel=\"noopener noreferrer\">https://lnkd.in/gxWuJ7qk</a></p>\n\n<p>A huge thank you to my amazing team members and our project supervisor Ms. Lakdini Manchanayaka, for their collaboration and guidance throughout the project.</p>\n\n<p>🛠️ <strong>Tech Stack</strong><br>\nESP32 | C/C++ | Arduino IDE | AES-128-GCM | mbedTLS | SIM800L GSM/GPRS | Cloudflare Workers | Firebase | React.js | Python | PyTorch | LSTM | EasyEDA</p>"
+    "id": 1792310700003,
+    "title": "E-Commerce Web Application",
+    "category": "Web Development",
+    "date": "2026",
+    "excerpt": "A responsive, pixel-perfect digital storefront and my first web development project.",
+    "fullContent": "<p>Developed a multi-page digital retail concept modeled after a global storefront, with responsive layouts and reusable interface components.</p><p>This was my first web development project and helped me learn HTML, CSS, Bootstrap, responsive layouts, and JavaScript interactions.</p><h3>Key Highlights</h3><ul><li>Pixel-perfect storefront design</li><li>Responsive product grids and multi-device layouts</li><li>Complex catalog presentation</li><li>Custom compliance cookie management using native JavaScript</li></ul><h3>Tech Stack</h3><p>HTML5, CSS3, Bootstrap 5, and JavaScript</p><p><a href=\"https://github.com/chathunikawiraj/E-Commerce-site\" target=\"_blank\" rel=\"noopener noreferrer\">View on GitHub</a></p>"
   }
 ]
